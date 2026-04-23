@@ -17,6 +17,7 @@ RUN \
     curl \
     git \
     libbz2-dev \
+    libcairo2-dev \
     libcurl4-openssl-dev \
     libdbus-1-dev \
     libegl-dev \
