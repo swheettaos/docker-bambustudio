@@ -16,7 +16,6 @@ RUN \
     cmake \
     curl \
     git \
-    libblosc-dev \
     libbz2-dev \
     libcurl4-openssl-dev \
     libdbus-1-dev \
@@ -92,7 +91,6 @@ RUN \
     -DDESTDIR=/build/deps-install \
     -DIN_GIT_REPO=ON \
     -DBINARY_DIR_REL=deps-build \
-    -DDEP_BUILD_BLOSC=OFF \
     -DDEP_BUILD_BOOST=OFF \
     -DDEP_BUILD_FREETYPE=OFF \
     -DDEP_BUILD_GLFW=OFF \
