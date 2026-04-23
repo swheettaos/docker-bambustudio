@@ -17,26 +17,18 @@ RUN \
     curl \
     git \
     libbz2-dev \
-    libcairo2-dev \
     libcurl4-openssl-dev \
     libdbus-1-dev \
     libegl-dev \
-    libexpat1-dev \
-    libfreetype-dev \
     libgl-dev \
-    libglfw3-dev \
     libglu1-mesa-dev \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer1.0-dev \
     libgtk-3-dev \
-    libjpeg-dev \
     liblzma-dev \
     libnotify-dev \
     libosmesa6-dev \
-    libpng-dev \
     libsecret-1-dev \
-    libssl-dev \
-    libtiff-dev \
     libtool \
     libudev-dev \
     libwayland-dev \
@@ -59,7 +51,6 @@ RUN \
     python3-pip \
     wget \
     zlib1g-dev \
-    libboost-all-dev \
     gstreamer1.0-plugins-base && \
   rm -rf /var/lib/apt/lists/*
 
@@ -90,14 +81,7 @@ RUN \
     -DCMAKE_BUILD_TYPE=Release \
     -DDESTDIR=/build/deps-install \
     -DIN_GIT_REPO=ON \
-    -DBINARY_DIR_REL=deps-build \
-    -DDEP_BUILD_BOOST=OFF \
-    -DDEP_BUILD_FREETYPE=OFF \
-    -DDEP_BUILD_GLFW=OFF \
-    -DDEP_BUILD_JPEG=OFF \
-    -DDEP_BUILD_OPENSSL=OFF \
-    -DDEP_BUILD_PNG=OFF \
-    -DDEP_BUILD_TIFF=OFF && \
+    -DBINARY_DIR_REL=deps-build && \
   cmake --build deps-build
 
 # Build and install BambuStudio
