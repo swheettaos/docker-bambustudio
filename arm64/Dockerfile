@@ -33,6 +33,7 @@ RUN \
     libtool \
     libudev-dev \
     libwayland-dev \
+    libwayland-egl-dev \
     libwebkit2gtk-4.1-dev \
     libx11-dev \
     libxcursor-dev \
@@ -43,6 +44,7 @@ RUN \
     libxrandr-dev \
     libxxf86vm-dev \
     libzstd-dev \
+    wayland-protocols \
     m4 \
     ninja-build \
     patchelf \
