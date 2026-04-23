@@ -83,7 +83,8 @@ RUN \
     -DCMAKE_BUILD_TYPE=Release \
     -DDESTDIR=/build/deps-install \
     -DIN_GIT_REPO=ON \
-    -DBINARY_DIR_REL=deps-build && \
+    -DBINARY_DIR_REL=deps-build \
+    -DDEP_WX_GTK3=ON && \
   cmake --build deps-build
 
 # Build and install BambuStudio
