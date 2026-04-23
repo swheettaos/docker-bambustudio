@@ -81,12 +81,18 @@ RUN \
   git apply /patches/0001-Apply-TBB-LTO-patch.patch
 
 # Build BambuStudio bundled dependencies
-# Disable deps that are already installed from apt to avoid patch/build failures
+# Build dir is INSIDE the source tree so that git apply --directory paths
+# (e.g. deps-build/dep_OCCT-prefix/src/dep_OCCT) stay within the git working
+# tree and git apply can resolve them correctly.
+# IN_GIT_REPO=ON + BINARY_DIR_REL=deps-build enables the DIRECTORY_FLAG logic
+# in the dep cmake modules (GMP, OCCT, OpenVDB, etc.).
 RUN \
-  cmake -S deps -B /build/deps-build \
+  cmake -S deps -B deps-build \
     -GNinja \
     -DCMAKE_BUILD_TYPE=Release \
     -DDESTDIR=/build/deps-install \
+    -DIN_GIT_REPO=ON \
+    -DBINARY_DIR_REL=deps-build \
     -DDEP_BUILD_BLOSC=OFF \
     -DDEP_BUILD_BOOST=OFF \
     -DDEP_BUILD_FREETYPE=OFF \
@@ -96,7 +102,7 @@ RUN \
     -DDEP_BUILD_PNG=OFF \
     -DDEP_BUILD_TIFF=OFF \
     -DDEP_BUILD_WXWIDGETS=OFF && \
-  cmake --build /build/deps-build
+  cmake --build deps-build
 
 # Build and install BambuStudio
 RUN \
