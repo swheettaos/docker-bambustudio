@@ -141,6 +141,8 @@ RUN \
     gstreamer1.0-nice \
     gstreamer1.0-plugins-* \
     gstreamer1.0-pulseaudio \
+    libavcodec61 \
+    libavutil59 \
     libblosc1 \
     libcurl4 \
     libglfw3 \
@@ -148,6 +150,7 @@ RUN \
     libnotify4 \
     libosmesa6 \
     libsecret-1-0 \
+    libswscale8 \
     libwebkit2gtk-4.1-0 \
     libwx-perl \
     libwxgtk-webview3.2-1t64 \
