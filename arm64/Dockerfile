@@ -106,7 +106,7 @@ RUN \
     -DBBL_RELEASE_TO_PUBLIC=1 \
     -DBBL_INTERNAL_TESTING=0 \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
-  cmake --build /build/bambu-build --target install
+  cmake --build /build/bambu-build --target install --parallel 6
 
 # Stage 2: Runtime image based on LSIO selkies desktop streaming base
 FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
